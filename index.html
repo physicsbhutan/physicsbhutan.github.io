@@ -3,8 +3,8 @@
   PHYSICS BHUTAN website
   To add news stories, photos or opportunities: press Ctrl+F (Cmd+F on Mac) and search for
   EDIT YOUR CONTENT HERE. Everything you need to change is in that one section.
-  Your photos live in the "images" folder next to this file. Upload the folder together
-  with this file. The news photos load straight from the original articles.
+  Your photos are uploaded next to this file in the repository (not in a folder).
+  The news photos load straight from the original articles.
 -->
 <html lang="en">
 <head>
@@ -338,7 +338,7 @@ h2 { font-family: var(--f-display); font-weight: 500; font-size: clamp(1.55rem, 
 
 const PROFILE = {
   name: "Roseleen Kafley",
-  photo: "images/profile.jpg",
+  photo: "profile.jpg",
   email: "roseleen.kafley@gmail.com",
   bio: [
     "I'm Roseleen Kafley, a physicist from Bhutan with a lifelong love of space. I studied physics at the University of New Brunswick in Canada. As a research assistant with Dr. Richard Langley, I worked on the satellite navigation receiver for CubeSat NB, New Brunswick's first cube satellite. I was also Vice-President Outreach of the UNB Physics and Astronomy Club, organising telescope viewing events.",
@@ -365,8 +365,8 @@ const PROFILE = {
 
 /* The story marked featured: true appears large at the top. Others appear as cards below it.
    Add new stories at the top of the list. "date" is free text, for example "Feb 2025".
-   "image" can be a web address of the article's photo, or a file in your images folder
-   such as "images/my-photo.jpg". The photo credit shows the source name automatically. */
+   "image" can be a web address of the article's photo, or the name of a photo you
+   uploaded to your repository, such as "my-photo.jpg". The photo credit shows the source name automatically. */
 const NEWS = [
   {
     title: "First UNB student at the Lindau Nobel Laureate Meeting",
@@ -442,17 +442,18 @@ const PLACES = [
   { id: "lindau",      name: "Lindau",               note: "Nobel Laureate Meeting 2024", lat: 47.55, lon: 9.68 }
 ];
 
-/* To add a photo: put the file in the images folder, then copy one block below. */
+/* To add a photo: upload it to your repository (Add file > Upload files), then copy one
+   block below and put the photo's exact file name in image: "..." */
 const GALLERY = [
-  { image: "images/telescope.jpg",            place: "fredericton", caption: "At the eyepiece on a telescope night" },
-  { image: "images/ksc-nasa-globe.jpg",       place: "ksc",         caption: "At the NASA globe, Kennedy Space Center Visitor Complex" },
-  { image: "images/aupac-badge.jpg",          place: "halifax",     caption: "Representing UNB at AUPAC, the Atlantic Undergraduate Physics and Astronomy Conference" },
-  { image: "images/ksc-rocket-garden.jpg",    place: "ksc",         caption: "In the Rocket Garden, beside an Artemis banner" },
-  { image: "images/unb-club-vp-outreach.jpg", place: "fredericton", caption: "Vice-President Outreach, UNB Physics and Astronomy Club" },
-  { image: "images/smu-observatory.jpg",      place: "halifax",     caption: "Burke-Gaffney Observatory display, Saint Mary's University" },
-  { image: "images/ksc-apollo-statue.jpg",    place: "ksc",         caption: "With the Apollo 11 crew statue, \"The Eagle\"" },
-  { image: "images/conference-group.jpg",     place: "halifax",     caption: "With fellow physics students at the conference" },
-  { image: "images/ksc-selfie.jpg",           place: "ksc",         caption: "A very happy visitor at Kennedy Space Center" }
+  { image: "telescope.jpg",            place: "fredericton", caption: "At the eyepiece on a telescope night" },
+  { image: "ksc-nasa-globe.jpg",       place: "ksc",         caption: "At the NASA globe, Kennedy Space Center Visitor Complex" },
+  { image: "aupac-badge.jpg",          place: "halifax",     caption: "Representing UNB at AUPAC, the Atlantic Undergraduate Physics and Astronomy Conference" },
+  { image: "ksc-rocket-garden.jpg",    place: "ksc",         caption: "In the Rocket Garden, beside an Artemis banner" },
+  { image: "unb-club-vp-outreach.jpg", place: "fredericton", caption: "Vice-President Outreach, UNB Physics and Astronomy Club" },
+  { image: "smu-observatory.jpg",      place: "halifax",     caption: "Burke-Gaffney Observatory display, Saint Mary's University" },
+  { image: "ksc-apollo-statue.jpg",    place: "ksc",         caption: "With the Apollo 11 crew statue, \"The Eagle\"" },
+  { image: "conference-group.jpg",     place: "halifax",     caption: "With fellow physics students at the conference" },
+  { image: "ksc-selfie.jpg",           place: "ksc",         caption: "A very happy visitor at Kennedy Space Center" }
 ];
 
 /* type: Scholarship, Fellowship, Internship, Summer school, Conference or Competition
@@ -784,7 +785,7 @@ const RESOURCES = [
     (n.also || []).filter((a) => isUrl(a.link)).map((a) =>
       '<a class="also" href="' + esc(a.link) + '"' + ext(a.link) + ">" + esc(a.label) + " &#8599;</a>").join("") +
     "</div>";
-  // Photos from other websites get a credit line; your own photos in the images folder don't.
+  // Photos from other websites get a credit line; your own uploaded photos don't.
   const newsMedia = (n) => '<div class="media">' + media(n.image, n.title, isUrl(n.image) ? (n.credit || n.source) : "") + "</div>";
   const feat = $("news-feature");
   feat.innerHTML = featured
