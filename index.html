@@ -1,0 +1,1039 @@
+<!doctype html>
+<!--
+  PHYSICS BHUTAN website
+  To add news stories, photos or opportunities: press Ctrl+F (Cmd+F on Mac) and search for
+  EDIT YOUR CONTENT HERE. Everything you need to change is in that one section.
+  Your photos live in the "images" folder next to this file. Upload the folder together
+  with this file. The news photos load straight from the original articles.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Physics Bhutan</title>
+<meta name="description" content="Scholarships, fellowships and learning resources for young Bhutanese students in physics and space science.">
+<meta property="og:title" content="Physics Bhutan">
+<meta property="og:description" content="Scholarships, fellowships and learning resources for young Bhutanese students in physics and space science.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://blogs.unb.ca/newsroom/_media/images/2025/02/roseleen-kafley.jpg">
+<meta name="theme-color" content="#0A0F1F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: night sky over the Himalaya. One dark field, saffron from the national flag as the single accent,
+   mission-control mono for dates and countdowns. Deliberately single-theme (dark). */
+:root {
+  --sky: #0A0F1F;
+  --sky-glow: #1C2754;
+  --band: #0D1329;
+  --surface: #121A33;
+  --surface-2: #18213F;
+  --line: #26315A;
+  --line-bright: #3A4A80;
+  --ridge: #141D40;
+  --ink: #ECEFF7;
+  --ink-dim: #A6AFC8;
+  --ink-faint: #737D9C;
+  --saffron: #F7B733;
+  --saffron-ink: #1A1300;
+  --ember: #F27A45;
+  --todo-bg: rgba(247, 183, 51, 0.16);
+  --scrim: rgba(10, 15, 31, 0.78);
+  --lb-bg: rgba(6, 9, 20, 0.96);
+
+  --f-display: "Unbounded", "Arial Black", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --wrap: 72rem;
+  --gutter: clamp(16px, 4vw, 40px);
+  --radius: 10px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--sky);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+[hidden] { display: none !important; }
+a { color: var(--saffron); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--saffron); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+mark.todo { background: var(--todo-bg); color: var(--saffron); border-radius: 3px; padding: 0 .2em; }
+
+/* ---------- Header ---------- */
+.site-head {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--sky);
+  background: color-mix(in srgb, var(--sky) 84%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; min-height: 3.75rem; }
+.brand { display: flex; align-items: center; gap: .55rem; text-decoration: none; color: var(--ink);
+  font-family: var(--f-display); font-weight: 700; font-size: .92rem; letter-spacing: .02em; white-space: nowrap; }
+.brand svg { color: var(--saffron); flex: none; }
+.nav { display: flex; gap: .15rem; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { color: var(--ink-dim); text-decoration: none; padding: .4rem .7rem; border-radius: 999px; font-size: .95rem; white-space: nowrap; }
+.nav a:hover { color: var(--ink); background: var(--surface); }
+@media (max-width: 760px) {
+  .site-head .wrap { flex-wrap: wrap; padding-block: .55rem .4rem; }
+  .nav { width: 100%; }
+  .nav a { padding-inline: .6rem; font-size: .9rem; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  background: radial-gradient(120% 90% at 75% -10%, var(--sky-glow) 0%, var(--sky) 62%);
+}
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero .wrap { position: relative; padding-block: clamp(3.5rem, 9vw, 7rem) clamp(7rem, 15vw, 11rem); }
+.coords { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--saffron); margin: 0; }
+.hero h1 {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: clamp(2.7rem, 9vw, 6rem); line-height: .96; letter-spacing: -.025em;
+  margin: .9rem 0 1.4rem; text-wrap: balance;
+}
+.hero h1 span { display: block; color: var(--saffron); }
+.lede { max-width: 36rem; font-size: clamp(1.08rem, 1.7vw, 1.25rem); color: var(--ink-dim); margin: 0; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.25rem; border-radius: 999px;
+  font: inherit; font-weight: 700; font-size: 1rem; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--line-bright); color: var(--ink); background: var(--surface);
+}
+.btn:hover { border-color: var(--saffron); }
+.btn.primary { background: var(--saffron); color: var(--saffron-ink); border-color: var(--saffron); }
+.btn.primary:hover { filter: brightness(1.06); }
+.btn.small { padding: .45rem .9rem; font-size: .9rem; }
+.live { font-family: var(--f-mono); font-size: .82rem; color: var(--ink-dim); display: inline-flex; align-items: center; gap: .5rem; }
+.live::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--saffron); box-shadow: 0 0 0 4px var(--todo-bg); }
+.ridge { position: absolute; left: 0; bottom: -1px; width: 100%; height: clamp(90px, 15vw, 210px); }
+.ridge .far { fill: var(--ridge); }
+.ridge .near { fill: var(--sky); }
+
+/* ---------- Sections ---------- */
+.block { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.band { background: var(--band); border-block: 1px solid var(--line); }
+.sec-head { margin-bottom: 2.25rem; max-width: 44rem; }
+.eyebrow { font-family: var(--f-mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--saffron); margin: 0 0 .6rem; }
+h2 { font-family: var(--f-display); font-weight: 500; font-size: clamp(1.55rem, 3.6vw, 2.35rem); line-height: 1.15; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.sec-head p:not(.eyebrow) { margin: .75rem 0 0; color: var(--ink-dim); }
+
+/* Shared image frame with an orbit placeholder behind it */
+.media { position: relative; background: var(--surface-2); overflow: hidden; }
+.media .ph {
+  position: absolute; inset: 0; display: grid; place-items: center; color: var(--line-bright);
+  background: radial-gradient(circle at 30% 25%, var(--sky-glow), var(--surface-2) 70%);
+}
+.media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- About ---------- */
+.about { display: grid; grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); gap: clamp(1.75rem, 5vw, 4.5rem); align-items: start; }
+.portrait { aspect-ratio: 4 / 5; max-width: 100%; border-radius: var(--radius); border: 1px solid var(--line); }
+@media (min-width: 761px) { .portrait { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 5.5rem); } }
+.portrait img { object-position: 50% 25%; }
+.about-body h2 { margin-bottom: 1.1rem; }
+.about-body .bio p { margin: 0 0 1rem; max-width: 40rem; }
+.facts { list-style: none; padding: 0; margin: 1.75rem 0 0; display: grid; max-width: 40rem; }
+.facts li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; padding-block: .8rem; border-top: 1px solid var(--line); }
+.facts .k { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); padding-top: .2rem; }
+@media (max-width: 760px) {
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .portrait { max-width: 15rem; }
+  .facts li { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+}
+
+/* ---------- News ---------- */
+.news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1.25rem; }
+.feature {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); margin-bottom: 1.25rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.feature .media { min-height: 19rem; }
+.feature .body { display: flex; flex-direction: column; justify-content: center; gap: .8rem; padding: clamp(1.4rem, 3.5vw, 2.5rem); min-width: 0; }
+.feature h3 { font-family: var(--f-display); font-weight: 500; font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.2; margin: 0; text-wrap: balance; }
+.feature p { margin: 0; color: var(--ink-dim); }
+.feature .more { margin-top: .25rem; }
+@media (max-width: 760px) {
+  .feature { grid-template-columns: minmax(0, 1fr); }
+  .feature .media { min-height: 0; aspect-ratio: 16 / 10; }
+}
+.news { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; min-width: 0; }
+.news .media { aspect-ratio: 16 / 10; }
+.credit {
+  position: absolute; left: .6rem; bottom: .6rem; max-width: calc(100% - 1.2rem);
+  font-family: var(--f-mono); font-size: .66rem; letter-spacing: .04em; line-height: 1.4;
+  padding: .15rem .45rem; border-radius: 4px; background: var(--scrim); color: var(--ink-dim);
+}
+.links { margin-top: auto; padding-top: .6rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 1.25rem; }
+.links .more { margin-top: 0; padding-top: 0; }
+.also { color: var(--ink-dim); font-size: .92rem; text-decoration: none; }
+.also:hover { color: var(--saffron); text-decoration: underline; }
+.feature .links { margin-top: .25rem; padding-top: 0; }
+.news .body { display: flex; flex-direction: column; gap: .55rem; padding: 1.2rem 1.3rem 1.3rem; flex: 1; }
+.meta .src { color: var(--saffron); text-transform: uppercase; letter-spacing: .1em; }
+.meta { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .05em; color: var(--ink-faint); display: flex; flex-wrap: wrap; gap: .2rem .8rem; }
+.news h3 { font-size: 1.15rem; line-height: 1.3; margin: 0; }
+.news p { margin: 0; color: var(--ink-dim); font-size: .98rem; }
+.more { margin-top: auto; padding-top: .6rem; font-weight: 700; text-decoration: none; }
+.more:hover { text-decoration: underline; }
+.more.off { color: var(--ink-faint); font-weight: 400; }
+
+/* ---------- Ground track & gallery ---------- */
+.track { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--band); margin-bottom: 1.25rem; }
+.track svg { display: block; width: 100%; min-width: 640px; height: auto; }
+.track .grid line { stroke: var(--line); stroke-width: 1; }
+.track .grid text { fill: var(--ink-faint); font-family: var(--f-mono); font-size: 11px; letter-spacing: .04em; }
+.track .arc { fill: none; stroke: var(--saffron); stroke-width: 1.5; stroke-dasharray: 3 6; opacity: .55; }
+@media (prefers-reduced-motion: no-preference) { .track .arc { animation: drift 2.4s linear infinite; } }
+@keyframes drift { to { stroke-dashoffset: -18; } }
+.track .pt circle.dot { fill: var(--saffron); }
+.track .pt circle.halo { fill: none; stroke: var(--saffron); stroke-width: 1; opacity: .35; }
+.track .pt.ctx circle.dot { fill: var(--ink-dim); }
+.track .pt.ctx circle.halo { stroke: var(--ink-dim); }
+.track .pt text { font-family: var(--f-mono); }
+.track .pt .nm { fill: var(--ink); font-size: 13px; font-weight: 500; }
+.track .pt .co { fill: var(--ink-faint); font-size: 10.5px; }
+.track .pt.btn { cursor: pointer; }
+.track .pt.btn:hover .nm, .track .pt.on .nm { fill: var(--saffron); }
+.track .pt.on circle.halo { opacity: 1; stroke-width: 1.5; }
+.track .pt.btn:focus { outline: none; }
+.track .pt.btn:focus-visible circle.halo { stroke: var(--saffron); stroke-width: 2.5; opacity: 1; }
+
+.collage { columns: 3 15rem; column-gap: 1rem; }
+.tile {
+  display: block; width: 100%; margin: 0 0 1rem; padding: 0; break-inside: avoid;
+  position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--line);
+  background: var(--surface-2); cursor: zoom-in; font: inherit; color: inherit; text-align: left;
+}
+.tile img { width: 100%; height: auto; display: block; transition: transform .5s ease; }
+@media (prefers-reduced-motion: no-preference) { .tile:hover img { transform: scale(1.035); } }
+.tile .cap { display: grid; gap: .15rem; padding: .7rem .9rem .85rem; background: var(--surface); border-top: 1px solid var(--line); }
+.tile .ph-wrap { display: block; overflow: hidden; }
+.tile:hover .tx { color: var(--saffron); }
+@media (max-width: 560px) {
+  .collage { columns: 2; column-gap: .6rem; }
+  .tile { margin-bottom: .6rem; }
+  .tile .cap { padding: .5rem .6rem .6rem; }
+  .tile .co { font-size: .6rem; }
+  .tile .tx { font-size: .8rem; }
+}
+.tile .co { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .08em; color: var(--saffron); text-transform: uppercase; }
+.tile .tx { font-size: .92rem; line-height: 1.35; color: var(--ink); font-weight: 700; transition: color .2s; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 50; background: var(--lb-bg);
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px calc(env(safe-area-inset-bottom, 0px) + 12px);
+  display: flex; align-items: center; justify-content: center;
+}
+.lb-inner { width: 100%; max-width: 64rem; height: 100%; display: flex; flex-direction: column; gap: .75rem; }
+.lb-bar, .lb-nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex: none; }
+.lb-count { font-family: var(--f-mono); font-size: .8rem; color: var(--ink-faint); }
+.lb-btn { font: inherit; font-size: .95rem; padding: .5rem 1rem; border-radius: 999px; border: 1px solid var(--line-bright); background: var(--surface); color: var(--ink); cursor: pointer; }
+.lb-btn:hover { border-color: var(--saffron); }
+.lb-fig { flex: 1; min-height: 0; margin: 0; display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+.lb-fig img { flex: 1; min-height: 0; max-width: 100%; object-fit: contain; border-radius: 6px; }
+.lb-fig figcaption { text-align: center; max-width: 40rem; display: grid; gap: .2rem; }
+.lb-coords { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--saffron); }
+
+/* ---------- Opportunities ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
+.chip { font: inherit; font-size: .9rem; padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--line-bright); background: transparent; color: var(--ink-dim); cursor: pointer; }
+.chip:hover { color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--saffron); color: var(--saffron-ink); border-color: var(--saffron); font-weight: 700; }
+.opps { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.opp {
+  display: grid; grid-template-columns: minmax(0, 1fr) 9.5rem; gap: .75rem 1.5rem; align-items: center;
+  padding: 1.15rem 1.35rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .45rem; }
+.tag { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; padding: .12rem .5rem; border-radius: 4px; border: 1px solid var(--line-bright); color: var(--ink-dim); }
+.tag.new { color: var(--saffron); border-color: var(--saffron); }
+.tag.example { border-style: dashed; color: var(--ink-faint); }
+.opp h3 { margin: 0; font-size: 1.12rem; line-height: 1.3; }
+.opp .host { margin: .25rem 0 0; color: var(--ink-dim); font-size: .95rem; }
+.opp .note { margin: .2rem 0 0; color: var(--ink-faint); font-size: .92rem; }
+.opp .go { display: inline-block; margin-top: .55rem; font-weight: 700; text-decoration: none; font-size: .95rem; }
+.opp .go:hover { text-decoration: underline; }
+.clock { font-family: var(--f-mono); text-align: right; font-variant-numeric: tabular-nums; }
+.clock .t { font-size: 1.5rem; font-weight: 500; line-height: 1.1; color: var(--ink); }
+.clock .u { font-size: .8rem; color: var(--ink-dim); margin-left: .25rem; }
+.clock .d { display: block; font-size: .74rem; color: var(--ink-faint); margin-top: .25rem; }
+.opp[data-state="soon"] .clock .t { color: var(--ember); }
+.opp[data-state="rolling"] .clock .t { font-size: 1.1rem; }
+.opp[data-state="closed"] { background: transparent; }
+.opp[data-state="closed"] h3, .opp[data-state="closed"] .clock .t { color: var(--ink-faint); }
+.opp[data-state="closed"] .clock .t { font-size: 1.1rem; }
+@media (max-width: 600px) {
+  .opp { grid-template-columns: minmax(0, 1fr); }
+  .clock { text-align: left; border-top: 1px solid var(--line); padding-top: .7rem; }
+  .clock .d { display: inline; margin-left: .75rem; }
+}
+.empty { color: var(--ink-dim); padding: 1.25rem; border: 1px dashed var(--line-bright); border-radius: var(--radius); margin: 0; }
+.board-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem 2rem; margin-top: 1.25rem; }
+.linkbtn { font: inherit; font-size: .95rem; background: none; border: 0; padding: .25rem 0; color: var(--saffron); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.fine { margin: 0; font-size: .88rem; color: var(--ink-faint); }
+
+/* ---------- Resources ---------- */
+.res-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 2rem 2.5rem; }
+.res-group { min-width: 0; }
+.res-group h3 { font-family: var(--f-mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin: 0 0 .4rem; padding-bottom: .6rem; border-bottom: 1px solid var(--line-bright); }
+.res-list { list-style: none; margin: 0; padding: 0; }
+.res-list li + li { border-top: 1px solid var(--line); }
+.res-list a { display: block; padding: .85rem 0; text-decoration: none; color: var(--ink); }
+.res-list strong { display: block; font-size: 1.02rem; }
+.res-list span { display: block; color: var(--ink-dim); font-size: .93rem; }
+.res-list a:hover strong { color: var(--saffron); }
+
+/* ---------- Videos ---------- */
+.soon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.25rem; }
+.soon { padding: 1.4rem 1.5rem; border: 1px dashed var(--line-bright); border-radius: var(--radius); min-width: 0; }
+.soon h3 { margin: 0 0 .4rem; font-size: 1.12rem; }
+.soon p { margin: 0; color: var(--ink-dim); }
+.soon .tag { display: inline-block; margin-bottom: .8rem; }
+
+/* ---------- Contact & footer ---------- */
+.contact { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem 4rem; align-items: start; }
+.contact p { color: var(--ink-dim); max-width: 36rem; }
+.contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem 1.5rem; min-width: 0; }
+.contact-card .k { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin-top: .4rem; }
+.email-row a { font-family: var(--f-mono); font-size: 1rem; color: var(--ink); overflow-wrap: anywhere; text-decoration: none; }
+.socials { list-style: none; margin: 1.25rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: .5rem; }
+.socials:empty { display: none; }
+.socials a { display: inline-block; padding: .35rem .8rem; border: 1px solid var(--line-bright); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: .92rem; }
+.socials a:hover { border-color: var(--saffron); color: var(--saffron); }
+@media (max-width: 760px) { .contact { grid-template-columns: minmax(0, 1fr); } }
+.site-foot { border-top: 1px solid var(--line); padding-block: 1.75rem; color: var(--ink-faint); font-size: .9rem; }
+.site-foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+.site-foot p { margin: 0; }
+</style>
+</head>
+<body>
+<script>
+/* =====================================================================
+   EDIT YOUR CONTENT HERE
+   Everything about you, your news, opportunities and resources comes
+   from the lists below. To add a news story or an opportunity:
+     1. Copy one whole { ... } block (including its curly brackets).
+     2. Paste it at the TOP of the list, followed by a comma.
+     3. Change the text between the quote marks.
+   Anything still in [square brackets] shows up highlighted on the page
+   so you can spot what is left to fill in.
+   Dates for deadlines use the form "YYYY-MM-DD", for example "2026-12-15".
+   ===================================================================== */
+
+const PROFILE = {
+  name: "Roseleen Kafley",
+  photo: "images/profile.jpg",
+  email: "roseleen.kafley@gmail.com",
+  bio: [
+    "I'm Roseleen Kafley, a physicist from Bhutan with a lifelong love of space. I studied physics at the University of New Brunswick in Canada. As a research assistant with Dr. Richard Langley, I worked on the satellite navigation receiver for CubeSat NB, New Brunswick's first cube satellite. I was also Vice-President Outreach of the UNB Physics and Astronomy Club, organising telescope viewing events.",
+    "In 2024, nominated by Bhutan's Royal Society of STEM, I represented Bhutan as a Young Scientist at the 73rd Lindau Nobel Laureate Meeting, dedicated to physics. I was the first UNB student ever to attend. Before that, as Vice President of Communications on the SEDS-Canada board of directors, I launched Space Savvy, its space-themed blog.",
+    "Back home, I served in the Bhutan Children's Parliament and signed its first constitution in 2015. I was also Democracy Club captain at both my lower and higher secondary schools.",
+    "Through Lindau, SEDS-Canada and many conferences, scientists around the world regularly share scholarships, fellowships and research programmes with me. Physics Bhutan is where I pass those opportunities on. If you are a Bhutanese student who is curious about physics or space, this site is for you."
+  ],
+  facts: [
+    { label: "Studied", value: "BSc Physics, University of New Brunswick, Canada" },
+    { label: "Lindau", value: "Young Scientist, 73rd Lindau Nobel Laureate Meeting (Physics), 2024" },
+    { label: "Research", value: "Satellite navigation (GNSS) receiver for CubeSat NB" },
+    { label: "Space", value: "VP Communications, SEDS-Canada board; launched the Space Savvy blog" },
+    { label: "Outreach", value: "Vice-President Outreach, UNB Physics and Astronomy Club" },
+    { label: "Bhutan", value: "Signed the first Bhutan Children's Parliament constitution, 2015; Democracy Club captain" }
+  ],
+  // Leave url empty ("") to hide a link.
+  socials: [
+    { label: "YouTube", url: "" },
+    { label: "Instagram", url: "" },
+    { label: "Facebook", url: "" },
+    { label: "LinkedIn", url: "" }
+  ]
+};
+
+/* The story marked featured: true appears large at the top. Others appear as cards below it.
+   Add new stories at the top of the list. "date" is free text, for example "Feb 2025".
+   "image" can be a web address of the article's photo, or a file in your images folder
+   such as "images/my-photo.jpg". The photo credit shows the source name automatically. */
+const NEWS = [
+  {
+    title: "First UNB student at the Lindau Nobel Laureate Meeting",
+    source: "UNB Newsroom",
+    date: "11 Feb 2025",
+    excerpt: "Nominated by Bhutan's Royal Society of STEM, Roseleen joined the 73rd Lindau meeting in Germany in 2024, becoming UNB's first attendee and New Brunswick's first Lindau alumna. The story covers her CubeSat NB research and her time with Nobel laureates such as Donna Strickland and Anne L'Huillier.",
+    link: "https://blogs.unb.ca/newsroom/2025/02/roseleen-kafley.php",
+    image: "https://blogs.unb.ca/newsroom/_media/images/2025/02/roseleen-kafley.jpg",
+    also: [{ label: "Shared by UNB on X", link: "https://x.com/UNB/status/1889343717602983996" }],
+    featured: true
+  },
+  {
+    title: "National coverage of the Lindau story",
+    source: "Education News Canada",
+    date: "13 Feb 2025",
+    excerpt: "A national education news site reported on the 2024 physics meeting in Lindau, where Roseleen met laureates including Saul Perlmutter, Donna Strickland and Anne L'Huillier, with talks ranging from ultrashort laser pulses to space exploration.",
+    link: "https://educationnewscanada.com/article/education/level/university/1/1124855/roseleen-kafley-becomes-the-first-unb-student-to-attend-the-lindau-nobel-laureate-meeting-as-a-young-scientist.html",
+    image: "https://educationnewscanada.com/images_news/id_news_0_20250211030213_67abae69124a3.jpg"
+  },
+  {
+    title: "Signatory of the Mainau Declaration 2024",
+    source: "Lindau Nobel Laureate Meetings",
+    date: "Jul 2024",
+    excerpt: "On the final day of the 2024 meeting, 30 Nobel laureates signed an urgent appeal against nuclear war. Roseleen is among the more than 600 Lindau alumni who added their names in support.",
+    link: "https://www.lindau-nobel.org/support-alumni-mainau-declaration-2024/",
+    image: "https://blogs.unb.ca/newsroom/_media/images/2025/02/roseleen-kafley.jpg",
+    credit: "UNB Newsroom"
+  },
+  {
+    title: "Exploring the Canadian Space Conference 2023",
+    source: "SEDS Canada",
+    date: "2023",
+    excerpt: "A feature compiled by Roseleen as SEDS Canada's VP Communications, on the conference at Polytechnique Montréal that connected students with space researchers and industry.",
+    link: "https://www.seds.ca/exploring-the-frontiers-of-space-the-canadian-space-conference-2023/",
+    image: "https://blogs.unb.ca/newsroom/_media/images/2022/07/roseleen-kafley.jpg",
+    credit: "UNB Newsroom"
+  },
+  {
+    title: "Launching Space Savvy, SEDS Canada's space blog",
+    source: "SEDS Canada",
+    date: "",
+    excerpt: "As VP Communications on the SEDS-Canada board, Roseleen launched Space Savvy, a weekly blog on space exploration, astronomy news, stargazing and the people working in the space sector. She also wrote the launch announcement as media contact.",
+    link: "https://www.seds.ca/launching-seds-canadas-space-themed-out-of-this-world-blog-dedicated-to-all-things-space/",
+    image: "https://blogs.unb.ca/newsroom/_media/images/2022/07/roseleen-kafley.jpg",
+    credit: "UNB Newsroom"
+  },
+  {
+    title: "Joining the SEDS-Canada board of directors",
+    source: "UNB Newsroom",
+    date: "6 Jul 2022",
+    excerpt: "Elected vice-president of communications for Students for the Exploration and Development of Space, Roseleen set out to make space and education resources more inclusive and accessible. The article also covers her satellite navigation work for CubeSat NB.",
+    link: "https://blogs.unb.ca/newsroom/2022/07/student-seds-board.php",
+    image: "https://blogs.unb.ca/newsroom/_media/images/2022/07/roseleen-kafley.jpg"
+  },
+  {
+    title: "Bhutan's first Children's Parliament",
+    source: "Election Commission of Bhutan",
+    date: "2015",
+    excerpt: "A video from the Election Commission of Bhutan on the Bhutan Children's Parliament. Roseleen served in the Parliament and signed its first constitution in 2015.",
+    link: "https://youtu.be/JTcjUOhdhSM",
+    linkText: "Watch the video",
+    image: "https://i.ytimg.com/vi/JTcjUOhdhSM/hqdefault.jpg"
+  }
+];
+
+/* Places on the ground-track map. lat/lon in degrees (north and east are positive).
+   Photos in GALLERY are linked to a place by its id. */
+const PLACES = [
+  { id: "bhutan",      name: "Bhutan",               note: "Home",                        lat: 27.5,  lon: 90.4 },
+  { id: "fredericton", name: "Fredericton",          note: "University of New Brunswick", lat: 45.96, lon: -66.64 },
+  { id: "halifax",     name: "Halifax",              note: "Saint Mary's University",     lat: 44.65, lon: -63.57 },
+  { id: "ksc",         name: "Kennedy Space Center", note: "Florida",                     lat: 28.52, lon: -80.68 },
+  { id: "lindau",      name: "Lindau",               note: "Nobel Laureate Meeting 2024", lat: 47.55, lon: 9.68 }
+];
+
+/* To add a photo: put the file in the images folder, then copy one block below. */
+const GALLERY = [
+  { image: "images/telescope.jpg",            place: "fredericton", caption: "At the eyepiece on a telescope night" },
+  { image: "images/ksc-nasa-globe.jpg",       place: "ksc",         caption: "At the NASA globe, Kennedy Space Center Visitor Complex" },
+  { image: "images/aupac-badge.jpg",          place: "halifax",     caption: "Representing UNB at AUPAC, the Atlantic Undergraduate Physics and Astronomy Conference" },
+  { image: "images/ksc-rocket-garden.jpg",    place: "ksc",         caption: "In the Rocket Garden, beside an Artemis banner" },
+  { image: "images/unb-club-vp-outreach.jpg", place: "fredericton", caption: "Vice-President Outreach, UNB Physics and Astronomy Club" },
+  { image: "images/smu-observatory.jpg",      place: "halifax",     caption: "Burke-Gaffney Observatory display, Saint Mary's University" },
+  { image: "images/ksc-apollo-statue.jpg",    place: "ksc",         caption: "With the Apollo 11 crew statue, \"The Eagle\"" },
+  { image: "images/conference-group.jpg",     place: "halifax",     caption: "With fellow physics students at the conference" },
+  { image: "images/ksc-selfie.jpg",           place: "ksc",         caption: "A very happy visitor at Kennedy Space Center" }
+];
+
+/* type: Scholarship, Fellowship, Internship, Summer school, Conference or Competition
+   deadline: "YYYY-MM-DD", or "" if applications are open all year
+   added: the day you posted it ("YYYY-MM-DD"). Items added in the last 14 days get a NEW tag. */
+const OPPORTUNITIES = [
+  {
+    type: "Fellowship",
+    title: "Summer Research Fellowship in Physics",
+    host: "Example Institute of Science",
+    level: "Undergraduates, 2nd year and above",
+    note: "Fully funded, 8 weeks",
+    deadline: "2026-10-20",
+    link: "",
+    added: "2026-10-03",
+    example: true
+  },
+  {
+    type: "Scholarship",
+    title: "Master's Scholarship in Astrophysics",
+    host: "Example University",
+    level: "Bachelor's graduates in physics or maths",
+    note: "Tuition and living stipend",
+    deadline: "2026-12-15",
+    link: "",
+    added: "2026-09-20",
+    example: true
+  },
+  {
+    type: "Summer school",
+    title: "Online Space Science Summer School",
+    host: "Example Space Agency",
+    level: "Class 11 and 12 students",
+    note: "Free, online",
+    deadline: "",
+    link: "",
+    added: "2026-09-10",
+    example: true
+  },
+  {
+    type: "Conference",
+    title: "Young Physicists Conference",
+    host: "Example Physical Society",
+    level: "Undergraduate and master's students",
+    note: "Travel grants available",
+    deadline: "2026-09-01",
+    link: "",
+    added: "2026-08-15",
+    example: true
+  }
+];
+
+const RESOURCES = [
+  {
+    group: "At school (Class 9 to 12)",
+    items: [
+      { name: "PhET Interactive Simulations", about: "Free simulations from the University of Colorado Boulder. Play with circuits, waves and forces.", link: "https://phet.colorado.edu/" },
+      { name: "Khan Academy Physics", about: "Free video lessons and practice from basics to AP level.", link: "https://www.khanacademy.org/science/physics" },
+      { name: "The Physics Classroom", about: "Clear tutorials and problem sets for high school physics.", link: "https://www.physicsclassroom.com/" }
+    ]
+  },
+  {
+    group: "At university",
+    items: [
+      { name: "MIT OpenCourseWare", about: "Lecture notes, problem sets and videos from real MIT physics courses.", link: "https://ocw.mit.edu/" },
+      { name: "The Feynman Lectures on Physics", about: "Richard Feynman's famous lectures, free to read online from Caltech.", link: "https://www.feynmanlectures.caltech.edu/" },
+      { name: "Lindau Mediatheque", about: "Talks by Nobel laureates from the Lindau meetings, going back decades.", link: "https://mediatheque.lindau-nobel.org/" }
+    ]
+  },
+  {
+    group: "Space and astronomy",
+    items: [
+      { name: "NASA Learning Resources", about: "Activities, lessons and images from NASA missions.", link: "https://www.nasa.gov/learning-resources/" },
+      { name: "ESA Education", about: "The European Space Agency's resources for students and teachers.", link: "https://www.esa.int/Education" },
+      { name: "Astronomy Picture of the Day", about: "A new image of the universe every day, explained by an astronomer.", link: "https://apod.nasa.gov/apod/" }
+    ]
+  }
+];
+/* ======================= END OF YOUR CONTENT ======================= */
+</script>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Physics Bhutan, back to top">
+      <svg viewBox="0 0 120 120" width="26" height="26" fill="none" stroke="currentColor" stroke-width="7" aria-hidden="true"><ellipse cx="60" cy="60" rx="52" ry="20" transform="rotate(-25 60 60)"/><circle cx="60" cy="60" r="13" fill="currentColor" stroke="none"/></svg>
+      Physics Bhutan
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#resources">Resources</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="coords">Druk Yul &middot; 27.5&deg; N &middot; 90.4&deg; E</p>
+      <h1 id="hero-title">Physics <span>Bhutan</span></h1>
+      <p class="lede">Physics and space science for young Bhutanese students. Find scholarships and fellowships from around the world, free learning resources, and stories from life in research.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#opportunities">Browse opportunities</a>
+        <a class="btn" href="#about">Meet the founder</a>
+        <span class="live" id="open-count" hidden></span>
+      </div>
+    </div>
+    <svg class="ridge" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+      <path class="far" d="M0 220V150l70-28 60 18 90-62 55 30 70-55 48 34 62-40 80 52 58-22 96 46 70-60 52 26 84-70 62 44 60-18 90 50 72-36 70 30 86-48 66 40 39-14V220Z"/>
+      <path class="near" d="M0 220V178l110-26 80 20 120-44 90 30 110-36 100 34 130-50 90 28 120-30 100 36 110-42 90 22 120-30 70 18V220Z"/>
+    </svg>
+  </section>
+
+  <section class="block" id="about" aria-labelledby="founder-name">
+    <div class="wrap about">
+      <div class="media portrait" id="portrait"></div>
+      <div class="about-body">
+        <p class="eyebrow">Meet the founder</p>
+        <h2 id="founder-name"></h2>
+        <div class="bio" id="bio"></div>
+        <ul class="facts" id="facts"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="news" aria-labelledby="news-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">In the news</p>
+        <h2 id="news-title">Stories from the journey</h2>
+        <p>Coverage from the UNB Newsroom, Education News Canada, the Lindau Nobel Laureate Meetings, SEDS Canada and the Election Commission of Bhutan.</p>
+      </div>
+      <div id="news-feature"></div>
+      <div class="news-grid" id="news-grid"></div>
+    </div>
+  </section>
+
+  <section class="block" id="gallery" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Ground track</p>
+        <h2 id="gallery-title">Where physics has taken me</h2>
+        <p>From watching a rocket launch at Kennedy Space Center to telescope nights and physics conferences in Canada. Pick a place on the track to see the photos from there.</p>
+      </div>
+      <div class="track" id="track"></div>
+      <div class="filters" id="place-filters" role="group" aria-label="Filter photos by place"></div>
+      <div class="collage" id="collage"></div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-caption" hidden>
+    <div class="lb-inner">
+      <div class="lb-bar">
+        <span class="lb-count" id="lb-count"></span>
+        <button class="lb-btn" id="lb-close" type="button">Close</button>
+      </div>
+      <figure class="lb-fig">
+        <img id="lb-img" alt="">
+        <figcaption>
+          <span class="lb-coords" id="lb-coords"></span>
+          <span id="lb-caption"></span>
+        </figcaption>
+      </figure>
+      <div class="lb-nav">
+        <button class="lb-btn" id="lb-prev" type="button">&larr; Previous</button>
+        <button class="lb-btn" id="lb-next" type="button">Next &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="block band" id="opportunities" aria-labelledby="opps-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Opportunity board</p>
+        <h2 id="opps-title">Scholarships, fellowships and programmes</h2>
+        <p>Shared by scientists and researchers around the world. New ones are posted as they come in, with the nearest deadline first.</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
+      <ul class="opps" id="opps"></ul>
+      <p class="empty" id="opps-empty" hidden>Nothing is open in this category right now. Check back soon.</p>
+      <div class="board-foot">
+        <button class="linkbtn" id="toggle-closed" type="button" hidden></button>
+        <p class="fine">Always confirm dates and eligibility on the official page before you apply.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="resources" aria-labelledby="res-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Learn</p>
+        <h2 id="res-title">Free places to learn physics</h2>
+        <p>Trusted, free resources for every stage, from Class 9 to university.</p>
+      </div>
+      <div class="res-groups" id="res-groups"></div>
+    </div>
+  </section>
+
+  <section class="block band" id="videos" aria-labelledby="vid-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Coming soon</p>
+        <h2 id="vid-title">Video lessons and talks</h2>
+        <p>Videos are on the way. Follow along on social media to see them first.</p>
+      </div>
+      <!-- Later: replace these two cards with YouTube embeds. On GitHub Pages you can paste
+           the <iframe> code from YouTube's Share > Embed button straight into this section. -->
+      <div class="soon-grid">
+        <article class="soon">
+          <span class="tag">In production</span>
+          <h3>Physics tutorials</h3>
+          <p>Step-by-step lessons on core physics topics, made with Bhutanese students in mind.</p>
+        </article>
+        <article class="soon">
+          <span class="tag">In production</span>
+          <h3>Motivation and career talks</h3>
+          <p>The path into research, what conferences and scholarships are really like, and advice for students starting out.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2 id="contact-title">Questions, or an opportunity to share?</h2>
+        <p>Students are welcome to write with questions about studying physics abroad. Researchers and organisations can send opportunities open to Bhutanese students, and they will be posted here.</p>
+      </div>
+      <div class="contact-card">
+        <span class="k">Email</span>
+        <div class="email-row">
+          <a id="email" href="#contact"></a>
+          <button class="btn small" id="copy-email" type="button">Copy</button>
+        </div>
+        <ul class="socials" id="socials"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Physics Bhutan</p>
+    <p id="foot-name"></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- helpers ---------- */
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const txt = (s) => esc(s).replace(/\[([^\]]+)\]/g, '<mark class="todo">[$1]</mark>');
+  const plain = (s) => String(s == null ? "" : s).replace(/[\[\]]/g, "");
+  const isUrl = (u) => /^https?:\/\//i.test(u || "");
+  const ext = (u) => isUrl(u) ? ' target="_blank" rel="noopener"' : "";
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const parseDate = (s) => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ""); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; };
+  const fmt = (d) => d.getDate() + " " + MONTHS[d.getMonth()] + " " + d.getFullYear();
+  const TODAY = new Date(); TODAY.setHours(0, 0, 0, 0);
+  const DAY = 86400000;
+  const ORBIT = '<svg viewBox="0 0 120 120" width="88" height="88" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="60" cy="60" rx="50" ry="18" transform="rotate(-25 60 60)"/><ellipse cx="60" cy="60" rx="50" ry="18" transform="rotate(35 60 60)" opacity=".55"/><circle cx="60" cy="60" r="8" fill="currentColor" stroke="none"/><circle cx="105" cy="39" r="3.5" fill="currentColor" stroke="none"/></svg>';
+
+  function media(src, alt, credit) {
+    return '<div class="ph" aria-hidden="true">' + ORBIT + "</div>" +
+      (src ? '<img src="' + esc(src) + '" alt="' + esc(plain(alt)) + '" referrerpolicy="no-referrer">' +
+        (credit ? '<span class="credit">Photo: ' + esc(plain(credit)) + "</span>" : "") : "");
+  }
+  // If a photo is missing or can't load, quietly show the orbit placeholder instead of a broken image.
+  function guardImages(root) {
+    root.querySelectorAll(".media img").forEach((img) => img.addEventListener("error", () => {
+      const c = img.parentNode.querySelector(".credit");
+      if (c) c.remove();
+      img.remove();
+    }));
+  }
+
+  /* ---------- profile ---------- */
+  $("founder-name").innerHTML = txt(PROFILE.name);
+  $("portrait").innerHTML = media(PROFILE.photo, "Portrait of " + PROFILE.name, "");
+  guardImages($("portrait"));
+  $("bio").innerHTML = PROFILE.bio.map((p) => "<p>" + txt(p) + "</p>").join("");
+  $("facts").innerHTML = PROFILE.facts.map((f) =>
+    '<li><span class="k">' + esc(f.label) + "</span><span>" + txt(f.value) + "</span></li>").join("");
+
+  const emailEl = $("email");
+  emailEl.innerHTML = txt(PROFILE.email);
+  if (!/\[/.test(PROFILE.email)) emailEl.href = "mailto:" + PROFILE.email;
+  $("socials").innerHTML = PROFILE.socials.filter((s) => isUrl(s.url))
+    .map((s) => '<li><a href="' + esc(s.url) + '"' + ext(s.url) + ">" + esc(s.label) + "</a></li>").join("");
+  $("year").textContent = new Date().getFullYear();
+  $("foot-name").innerHTML = "Created by " + txt(PROFILE.name) + " for the students of Bhutan";
+
+  $("copy-email").addEventListener("click", () => {
+    const btn = $("copy-email");
+    const reset = (ms) => setTimeout(() => { btn.textContent = "Copy"; }, ms);
+    const fallback = () => {
+      const r = document.createRange(); r.selectNodeContents(emailEl);
+      const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      btn.textContent = "Selected, press Ctrl+C"; reset(2600);
+    };
+    try {
+      navigator.clipboard.writeText(plain(PROFILE.email)).then(() => { btn.textContent = "Copied"; reset(1800); }, fallback);
+    } catch (e) { fallback(); }
+  });
+
+  /* ---------- news ---------- */
+  const featured = NEWS.find((n) => n.featured) || null;
+  const rest = NEWS.filter((n) => n !== featured);
+  const newsBody = (n) =>
+    '<div class="meta"><span class="src">' + txt(n.source) + "</span>" +
+      (n.date ? "<span>" + txt(n.date) + "</span>" : "") +
+      (n.example ? '<span class="tag example">Example</span>' : "") + "</div>" +
+    "<h3>" + txt(n.title) + "</h3>" +
+    "<p>" + txt(n.excerpt) + "</p>" +
+    '<div class="links">' +
+    (isUrl(n.link)
+      ? '<a class="more" href="' + esc(n.link) + '"' + ext(n.link) + ">" +
+          esc(n.linkText || (/\/\/(www\.)?(x|twitter)\.com\//i.test(n.link) ? "View the post" : "Read the full story")) + " &#8599;</a>"
+      : '<span class="more off">Link coming soon</span>') +
+    (n.also || []).filter((a) => isUrl(a.link)).map((a) =>
+      '<a class="also" href="' + esc(a.link) + '"' + ext(a.link) + ">" + esc(a.label) + " &#8599;</a>").join("") +
+    "</div>";
+  // Photos from other websites get a credit line; your own photos in the images folder don't.
+  const newsMedia = (n) => '<div class="media">' + media(n.image, n.title, isUrl(n.image) ? (n.credit || n.source) : "") + "</div>";
+  const feat = $("news-feature");
+  feat.innerHTML = featured
+    ? '<article class="feature">' + newsMedia(featured) + '<div class="body">' + newsBody(featured) + "</div></article>"
+    : "";
+  guardImages(feat);
+  const grid = $("news-grid");
+  grid.innerHTML = rest.map((n) =>
+    '<article class="news">' + newsMedia(n) + '<div class="body">' + newsBody(n) + "</div></article>").join("");
+  guardImages(grid);
+
+  /* ---------- ground track & gallery ---------- */
+  const placeById = Object.fromEntries(PLACES.map((p) => [p.id, p]));
+  const coord = (p) => Math.abs(p.lat).toFixed(2) + "° " + (p.lat >= 0 ? "N" : "S") + "  " +
+    Math.abs(p.lon).toFixed(2) + "° " + (p.lon >= 0 ? "E" : "W");
+  const photoCount = (id) => GALLERY.filter((g) => g.place === id).length;
+  let placeFilter = "all";
+
+  function renderTrack() {
+    // Equirectangular plot window, like a satellite ground-track display.
+    const W = 1000, H = 300, L0 = -105, L1 = 110, B0 = 12, B1 = 64;
+    const sx = (lon) => ((lon - L0) / (L1 - L0)) * W;
+    const sy = (lat) => ((B1 - lat) / (B1 - B0)) * H;
+    let g = '<g class="grid">';
+    for (let lon = -90; lon <= 105; lon += 30) {
+      g += '<line x1="' + sx(lon) + '" y1="0" x2="' + sx(lon) + '" y2="' + H + '"/>' +
+        '<text x="' + (sx(lon) + 4) + '" y="' + (H - 6) + '">' + Math.abs(lon) + "°" + (lon < 0 ? "W" : lon > 0 ? "E" : "") + "</text>";
+    }
+    for (let lat = 15; lat <= 60; lat += 15) {
+      g += '<line x1="0" y1="' + sy(lat) + '" x2="' + W + '" y2="' + sy(lat) + '"/>' +
+        '<text x="6" y="' + (sy(lat) - 5) + '">' + lat + "°N</text>";
+    }
+    g += "</g>";
+    // Trajectories: home to UNB, then out from UNB to each other place.
+    const legs = [["bhutan", "fredericton"], ["fredericton", "halifax"], ["fredericton", "ksc"], ["fredericton", "lindau"], ["lindau", "bhutan"]];
+    let arcs = "";
+    legs.forEach(([a, b]) => {
+      const A = placeById[a], B = placeById[b]; if (!A || !B) return;
+      const x1 = sx(A.lon), y1 = sy(A.lat), x2 = sx(B.lon), y2 = sy(B.lat);
+      const d = Math.hypot(x2 - x1, y2 - y1), mx = (x1 + x2) / 2, my = Math.min(y1, y2) - Math.max(18, d * 0.22);
+      arcs += '<path class="arc" d="M' + x1 + " " + y1 + " Q" + mx + " " + Math.max(8, my) + " " + x2 + " " + y2 + '"/>';
+    });
+    // Label placement keeps the two close Canadian cities from colliding.
+    const LBL = { fredericton: [-16, -16, "end"], halifax: [14, 18, "start"], ksc: [16, 4, "start"], lindau: [0, 30, "middle"], bhutan: [-16, 26, "end"] };
+    let pts = "";
+    PLACES.forEach((p) => {
+      const x = sx(p.lon), y = sy(p.lat), n = photoCount(p.id);
+      const [dx, dy, anchor] = LBL[p.id] || [12, 4, "start"];
+      const interactive = n > 0;
+      pts += '<g class="pt' + (interactive ? " btn" : " ctx") + (placeFilter === p.id ? " on" : "") + '" data-place="' + esc(p.id) + '"' +
+        (interactive ? ' role="button" tabindex="0" aria-pressed="' + (placeFilter === p.id) + '" aria-label="Show ' + n + " photos from " + esc(p.name) + '"' : "") + ">" +
+        '<circle class="halo" cx="' + x + '" cy="' + y + '" r="11"/><circle class="dot" cx="' + x + '" cy="' + y + '" r="4.5"/>' +
+        '<text class="nm" x="' + (x + dx) + '" y="' + (y + dy) + '" text-anchor="' + anchor + '">' + esc(p.name) + (n ? " · " + n : "") + "</text>" +
+        '<text class="co" x="' + (x + dx) + '" y="' + (y + dy + 14) + '" text-anchor="' + anchor + '">' + coord(p) + "</text></g>";
+    });
+    $("track").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="Map of places, from Bhutan to Canada, Florida and Germany">' + g + arcs + pts + "</svg>";
+  }
+
+  function renderPlaceFilters() {
+    const ids = PLACES.filter((p) => photoCount(p.id) > 0).map((p) => p.id);
+    $("place-filters").innerHTML = ["all"].concat(ids).map((id) => {
+      const label = id === "all" ? "All photos · " + GALLERY.length : placeById[id].name + " · " + photoCount(id);
+      return '<button class="chip" type="button" data-place="' + esc(id) + '" aria-pressed="' + (placeFilter === id) + '">' + esc(label) + "</button>";
+    }).join("");
+  }
+
+  let shown = [];
+  function renderCollage() {
+    shown = GALLERY.filter((g) => placeFilter === "all" || g.place === placeFilter);
+    $("collage").innerHTML = shown.map((g, i) => {
+      const p = placeById[g.place];
+      return '<button class="tile" type="button" data-i="' + i + '" aria-label="Open photo: ' + esc(plain(g.caption)) + '">' +
+        '<span class="ph-wrap"><img src="' + esc(g.image) + '" alt="' + esc(plain(g.caption)) + '" loading="lazy"></span>' +
+        '<span class="cap">' + (p ? '<span class="co">' + esc(p.name) + "</span>" : "") +
+        '<span class="tx">' + esc(g.caption) + "</span></span></button>";
+    }).join("");
+    $("collage").querySelectorAll("img").forEach((img) => img.addEventListener("error", () => img.closest(".tile").remove()));
+  }
+
+  function setPlace(id) {
+    placeFilter = (id === placeFilter && id !== "all") ? "all" : id;
+    renderTrack(); renderPlaceFilters(); renderCollage();
+  }
+  $("place-filters").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (b) setPlace(b.dataset.place); });
+  $("track").addEventListener("click", (e) => { const g = e.target.closest(".pt.btn"); if (g) setPlace(g.dataset.place); });
+  $("track").addEventListener("keydown", (e) => {
+    const g = e.target.closest && e.target.closest(".pt.btn");
+    if (g && (e.key === "Enter" || e.key === " ")) {
+      e.preventDefault(); const id = g.dataset.place; setPlace(id);
+      const again = $("track").querySelector('.pt[data-place="' + id + '"]'); if (again) again.focus();
+    }
+  });
+  renderTrack(); renderPlaceFilters(); renderCollage();
+
+  // Full-screen photo viewer
+  const lb = $("lightbox");
+  let lbIndex = 0, lastFocus = null;
+  function showPhoto(i) {
+    lbIndex = (i + shown.length) % shown.length;
+    const g = shown[lbIndex], p = placeById[g.place];
+    $("lb-img").src = g.image; $("lb-img").alt = plain(g.caption);
+    $("lb-caption").textContent = g.caption;
+    $("lb-coords").textContent = p ? p.name + "  ·  " + coord(p) : "";
+    $("lb-count").textContent = (lbIndex + 1) + " / " + shown.length;
+  }
+  function openLb(i) {
+    lastFocus = document.activeElement; showPhoto(i); lb.hidden = false;
+    document.documentElement.style.overflow = "hidden"; $("lb-close").focus();
+  }
+  function closeLb() {
+    lb.hidden = true; document.documentElement.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $("collage").addEventListener("click", (e) => { const t = e.target.closest(".tile"); if (t) openLb(+t.dataset.i); });
+  $("lb-close").addEventListener("click", closeLb);
+  $("lb-prev").addEventListener("click", () => showPhoto(lbIndex - 1));
+  $("lb-next").addEventListener("click", () => showPhoto(lbIndex + 1));
+  lb.addEventListener("click", (e) => { if (e.target === lb || e.target.classList.contains("lb-fig")) closeLb(); });
+  document.addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") closeLb();
+    else if (e.key === "ArrowLeft") showPhoto(lbIndex - 1);
+    else if (e.key === "ArrowRight") showPhoto(lbIndex + 1);
+    else if (e.key === "Tab") {
+      const f = Array.from(lb.querySelectorAll("button")); const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ---------- opportunities ---------- */
+  const TYPE_ORDER = ["Scholarship", "Fellowship", "Internship", "Summer school", "Conference", "Competition"];
+  const opps = OPPORTUNITIES.map((o) => {
+    const d = parseDate(o.deadline);
+    const days = d ? Math.round((d - TODAY) / DAY) : Infinity;
+    const state = !d ? "rolling" : days < 0 ? "closed" : days <= 14 ? "soon" : "open";
+    const added = parseDate(o.added);
+    const isNew = added && (TODAY - added) / DAY <= 14 && state !== "closed";
+    return Object.assign({}, o, { d, days, state, isNew });
+  });
+  const rank = { soon: 0, open: 0, rolling: 1, closed: 2 };
+  opps.sort((a, b) => rank[a.state] - rank[b.state] ||
+    (a.state === "closed" ? b.days - a.days : a.days - b.days));
+
+  const types = Array.from(new Set(opps.map((o) => o.type)))
+    .sort((a, b) => (TYPE_ORDER.indexOf(a) + 1 || 99) - (TYPE_ORDER.indexOf(b) + 1 || 99));
+  let filter = "All";
+  let showClosed = false;
+
+  function clock(o) {
+    if (o.state === "rolling") return '<span class="t">Open</span><span class="d">Rolling deadline</span>';
+    if (o.state === "closed") return '<span class="t">Closed</span><span class="d">' + fmt(o.d) + "</span>";
+    if (o.days === 0) return '<span class="t">Today</span><span class="d">Closes today</span>';
+    return '<span class="t" aria-label="' + o.days + ' days left">T&minus;' + o.days + '</span><span class="u">' +
+      (o.days === 1 ? "day" : "days") + '</span><span class="d">Closes ' + fmt(o.d) + "</span>";
+  }
+
+  function renderFilters() {
+    $("filters").innerHTML = ["All"].concat(types).map((t) =>
+      '<button class="chip" type="button" data-type="' + esc(t) + '" aria-pressed="' + (t === filter) + '">' + esc(t) + "</button>").join("");
+  }
+
+  function renderOpps() {
+    const inType = opps.filter((o) => filter === "All" || o.type === filter);
+    const closedCount = inType.filter((o) => o.state === "closed").length;
+    const visible = inType.filter((o) => showClosed || o.state !== "closed");
+    $("opps").innerHTML = visible.map((o) =>
+      '<li class="opp" data-state="' + o.state + '">' +
+        "<div>" +
+          '<div class="tags"><span class="tag">' + esc(o.type) + "</span>" +
+            (o.isNew ? '<span class="tag new">New</span>' : "") +
+            (o.example ? '<span class="tag example">Example</span>' : "") + "</div>" +
+          "<h3>" + txt(o.title) + "</h3>" +
+          '<p class="host">' + txt(o.host) + (o.level ? " &middot; " + txt(o.level) : "") + "</p>" +
+          (o.note ? '<p class="note">' + txt(o.note) + "</p>" : "") +
+          (isUrl(o.link) ? '<a class="go" href="' + esc(o.link) + '"' + ext(o.link) + ">Details and how to apply &#8599;</a>" : "") +
+        "</div>" +
+        '<div class="clock">' + clock(o) + "</div>" +
+      "</li>").join("");
+    $("opps-empty").hidden = visible.length > 0;
+    const tog = $("toggle-closed");
+    tog.hidden = closedCount === 0;
+    tog.textContent = showClosed ? "Hide closed" : "Show closed (" + closedCount + ")";
+  }
+
+  $("filters").addEventListener("click", (e) => {
+    const b = e.target.closest(".chip");
+    if (!b) return;
+    filter = b.dataset.type;
+    renderFilters(); renderOpps();
+  });
+  $("toggle-closed").addEventListener("click", () => { showClosed = !showClosed; renderOpps(); });
+  renderFilters(); renderOpps();
+
+  const liveOpen = opps.filter((o) => !o.example && o.state !== "closed").length;
+  if (liveOpen > 0) {
+    const el = $("open-count");
+    el.textContent = liveOpen + (liveOpen === 1 ? " opportunity" : " opportunities") + " open now";
+    el.hidden = false;
+  }
+
+  /* ---------- resources ---------- */
+  $("res-groups").innerHTML = RESOURCES.map((g) =>
+    '<div class="res-group"><h3>' + esc(g.group) + '</h3><ul class="res-list">' +
+      g.items.map((r) => '<li><a href="' + esc(r.link) + '"' + ext(r.link) + "><strong>" + esc(r.name) +
+        " &#8599;</strong><span>" + esc(r.about) + "</span></a></li>").join("") +
+    "</ul></div>").join("");
+
+  /* ---------- night sky ---------- */
+  const canvas = $("sky");
+  const ctx = canvas.getContext && canvas.getContext("2d");
+  if (ctx) {
+    const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let w = 0, h = 0, stars = [], running = false, visible = true;
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = canvas.clientWidth; h = canvas.clientHeight;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.round((w * h) / 2400);
+      stars = Array.from({ length: n }, () => ({
+        x: Math.random() * w, y: Math.random() * h * 0.82,
+        r: Math.random() * 1.15 + 0.25, a: Math.random() * 0.6 + 0.35,
+        p: Math.random() * Math.PI * 2, s: Math.random() * 0.9 + 0.2,
+        warm: Math.random() < 0.12
+      }));
+      draw(performance.now());
+    }
+    function draw(t) {
+      ctx.clearRect(0, 0, w, h);
+      for (const s of stars) {
+        const tw = reduce ? 1 : 0.7 + 0.3 * Math.sin((t / 1000) * s.s + s.p);
+        ctx.globalAlpha = s.a * tw;
+        ctx.fillStyle = s.warm ? "#FFD98A" : "#FFFFFF";
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+    function loop(t) { if (!visible) { running = false; return; } draw(t); requestAnimationFrame(loop); }
+    function start() { if (!reduce && !running) { running = true; requestAnimationFrame(loop); } }
+    resize();
+    let rt; window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(resize, 150); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => { visible = entries[0].isIntersecting; if (visible) start(); })
+        .observe(canvas);
+    }
+    start();
+  }
+})();
+</script>
+</body>
+</html>
