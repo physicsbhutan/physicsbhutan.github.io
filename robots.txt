@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://physicsbhutan.github.io/sitemap.xml
